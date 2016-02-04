@@ -21,9 +21,10 @@ class DatabaseConfig
     public $password;
 
 
-    public function __construct($name = "DATABASE_URL")
+    public function __construct($schemaUrl = null)
     {
-        $config =  parse_url(getenv($name));
+        $config = $schemaUrl ?? getenv("DATABASEURL");
+        $config = parse_url($config);
         $this->type = $config["type"]??null;
         $this->host = $config["host"]??"localhost";
         $this->port = $config["port"]??5432;
