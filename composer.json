@@ -1,0 +1,15 @@
+{
+    "name": "chatbox-inc/heroku-php",
+    "authors": [
+        {
+            "name": "mikakane",
+            "email": "mikakane2@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "Chatbox\\Heroku":["./src"]
+        }
+    },
+    "require": {}
+}
