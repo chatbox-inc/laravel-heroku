@@ -20,7 +20,7 @@ PHP アプリケーションとしてHeroku のセットアップを行います
 
 ### heroku:redis
 
-データベースの設定を取り出して、laravelの形式に変換し、heroku config:set する。
+redisの設定を取り出して、laravelの形式に変換し、heroku config:set する。
 
 ### heroku:sendmail
 

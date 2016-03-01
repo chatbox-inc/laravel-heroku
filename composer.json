@@ -8,7 +8,7 @@
     ],
     "autoload":{
         "psr-4":{
-            "Chatbox\\Heroku":["./src"]
+            "Chatbox\\Heroku\\":["./src"]
         }
     },
     "require": {}
