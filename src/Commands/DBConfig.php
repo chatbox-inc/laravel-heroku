@@ -19,7 +19,7 @@ class DBConfig extends Command
         {target?}
         {--f|force}";
 
-    public function handle(SendgridService $sendgrid){
+    public function handle(){
 
         $targetKey = $this->argument("target")?:"DATABASE_URL";
 

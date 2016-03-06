@@ -18,6 +18,7 @@ use Monolog\Formatter\LineFormatter;
 use Chatbox\Heroku\Commands\Sendmail;
 use Chatbox\Heroku\Commands\DBConfig;
 use Chatbox\Heroku\Commands\RedisConfig;
+use Chatbox\Heroku\Commands\Init;
 
 class HerokuServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,7 @@ class HerokuServiceProvider extends ServiceProvider
         });
 
         $this->commands([
+            Init::class,
             Sendmail::class,
             DBConfig::class,
             RedisConfig::class

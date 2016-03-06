@@ -21,7 +21,7 @@ class RedisConfig extends Command
         {target?}
         {--f|force}";
 
-    public function handle(SendgridService $sendgrid){
+    public function handle(){
 
         $targetKey = $this->argument("target")?:"REDIS_URL";
 
