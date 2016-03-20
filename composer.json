@@ -1,5 +1,7 @@
 {
     "name": "chatbox-inc/heroku-php",
+    "license": "MIT",
+
     "authors": [
         {
             "name": "mikakane",
