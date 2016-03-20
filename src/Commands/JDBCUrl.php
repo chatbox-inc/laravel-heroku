@@ -35,7 +35,7 @@ class JDBCUrl extends Command
             list($key,$config) = explode("=",$o,2);
             if($key == $targetKey){
                 $db = new DatabaseConfig(trim($config,"'"));
-                $line = "jdbc:postgres://";
+                $line = "jdbc:postgresql://";
                 $line .= "{$db->host}:{$db->port}";
                 $line .= "/{$db->database}";
                 $line .= "?user={$db->username}&password={$db->password}";
