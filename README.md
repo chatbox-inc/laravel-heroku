@@ -1,5 +1,7 @@
 # Heorku 
 
+[https://packagist.org/packages/chatbox-inc/heroku-php](https://packagist.org/packages/chatbox-inc/heroku-php)
+
 - Config Parser 
 - Error Handler
 - Setup Scripts
