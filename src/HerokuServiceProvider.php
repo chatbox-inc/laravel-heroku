@@ -20,6 +20,7 @@ use Chatbox\Heroku\Commands\DBConfig;
 use Chatbox\Heroku\Commands\RedisConfig;
 use Chatbox\Heroku\Commands\Init;
 use Chatbox\Heroku\Commands\JDBCUrl;
+use Chatbox\Heroku\Commands\ConnectConfig;
 
 class HerokuServiceProvider extends ServiceProvider
 {
@@ -37,7 +38,8 @@ class HerokuServiceProvider extends ServiceProvider
             Sendmail::class,
             DBConfig::class,
             JDBCUrl::class,
-            RedisConfig::class
+            RedisConfig::class,
+            ConnectConfig::class
         ]);
     }
 
