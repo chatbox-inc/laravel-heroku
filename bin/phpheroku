@@ -4,6 +4,8 @@
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Laravel\Lumen\Exceptions\Handler;
 
 $autoLoader = function(){
     $path = "";
@@ -20,6 +22,8 @@ $autoLoader = function(){
 $autoLoader();
 
 $app = new \Laravel\Lumen\Application(getcwd());
+
+$app->singleton(ExceptionHandler::class,Handler::class);
 
 $app->register(\Chatbox\Heroku\HerokuServiceProvider::class);
 

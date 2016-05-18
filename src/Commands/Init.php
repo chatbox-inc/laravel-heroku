@@ -17,7 +17,7 @@ class Init extends Command
     protected $signature = "
         heroku:init
         {--node: use Node.js buildpack}
-        {--a=:application name}
+        {--a|appname= :application name}
     ";
 
     /**
@@ -28,7 +28,7 @@ class Init extends Command
      */
     public function handle(){
         $dir = getcwd();
-        $app = $this->argument("appname");
+        $app = $this->option("appname");
 
         system("heroku git:remote -a $app");
         if($this->option("node")){
