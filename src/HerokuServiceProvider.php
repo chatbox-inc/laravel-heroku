@@ -9,6 +9,7 @@
 namespace Chatbox\Heroku;
 
 
+use Chatbox\Heroku\Config\DatabaseConfig;
 use Illuminate\Support\ServiceProvider;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;

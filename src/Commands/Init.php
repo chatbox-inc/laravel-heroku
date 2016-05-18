@@ -16,7 +16,8 @@ class Init extends Command
 
     protected $signature = "
         heroku:init
-        {appname}
+        {--node: use Node.js buildpack}
+        {--a=:application name}
     ";
 
     /**
@@ -30,7 +31,9 @@ class Init extends Command
         $app = $this->argument("appname");
 
         system("heroku git:remote -a $app");
-        system("heroku buildpacks:add heroku/nodejs");
+        if($this->option("node")){
+            system("heroku buildpacks:add heroku/nodejs");
+        }
         system("heroku buildpacks:add heroku/php");
 
         $procfile = <<<Procfile

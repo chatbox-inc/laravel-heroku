@@ -13,5 +13,9 @@
             "Chatbox\\Heroku\\":["./src"]
         }
     },
-    "require": {}
+    "bin":["./bin/phpheroku"],
+    "require": {},
+    "require-dev": {
+        "laravel/lumen": "^5.2"
+    }
 }

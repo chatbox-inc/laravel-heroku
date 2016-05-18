@@ -6,6 +6,26 @@
 - Error Handler
 - Setup Scripts
 
+## Config Parser 
+
+Heroku Addon の提供するConfig値をオブジェクトに変換して読み込めるようにする。
+
+Runtime で分割するのは効率が悪いように思えるかも知れないが、
+AddonsのメンテでConfig値が勝手に書き換わるなどの運用も見られるため、
+Addons提供のConfig値は実装でバラさずに、そのまま参照して実行時にバラすのが無難。
+
+````
+<?php 
+$db = new DatabaseConfig(env("DATABASE_URL"))
+$redis = new RedisConfig(env("REDIS_URL"))
+````
+
+## Service Provider 
+
+Heroku で Laravelを動作させる際のService Provider
+
+ログの出力を標準出力に向けてくれる。 APP_LOGLEVEL のConfig値で調整可能(100-600)
+
 ## Commands
 
 ### heroku:init
@@ -38,6 +58,44 @@ redisの設定を取り出して、laravelの形式に変換し、heroku config:
 
 [LoggerService] 
 
+
+## heroku php cheat sheat
+
+see all about php on official document 
+
+https://devcenter.heroku.com/articles/php-support
+
+setup buildpack 
+
+````
+$ heroku buildpacks:set heroku/php
+````
+
+### Procfiles 
+
+php on apache
+
+````
+web: vendor/bin/heroku-php-apache2 public
+````
+
+HHVM on apache
+
+````
+web: vendor/bin/heroku-hhvm-apache2 public
+````
+
+php with nginx
+
+````
+web: vendor/bin/heroku-php-nginx public
+````
+
+php with nginx 
+
+````
+web: vendor/bin/heroku-hhvm-nginx public
+````
 
 
 

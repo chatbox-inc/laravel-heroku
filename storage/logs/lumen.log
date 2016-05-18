@@ -1,0 +1,4 @@
+[2016-05-17 18:39:33] lumen.ERROR: ErrorException: Declaration of class@anonymous::schedule(Schedule $schedule) should be compatible with Laravel\Lumen\Console\Kernel::schedule(Illuminate\Console\Scheduling\Schedule $schedule) in /Users/mkkn/mine/chatbox-inc/heroku-php/bin/phpheroku:25
+Stack trace:
+#0 /Users/mkkn/mine/chatbox-inc/heroku-php/bin/phpheroku(25): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(2, 'Declaration of ...', '/Users/mkkn/min...', 25, Array)
+#1 {main}  

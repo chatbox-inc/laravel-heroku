@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Illuminate\Console\Scheduling\Schedule;
+
+$autoLoader = function(){
+    $path = "";
+    for($i=0;$i<3;$i++){
+        $autoloader = getcwd().$path."/vendor/autoload.php";
+        if(file_exists($autoloader) && is_file($autoloader) && is_readable($autoloader)){
+            require $autoloader;
+            return true;
+        }
+        $path = $path . "/..";
+    }
+    throw new DomainException("cant find autoloader");
+};
+$autoLoader();
+
+$app = new \Laravel\Lumen\Application(getcwd());
+
+$app->register(\Chatbox\Heroku\HerokuServiceProvider::class);
+
+$kernel = new class($app) extends \Laravel\Lumen\Console\Kernel{
+
+    protected $commands = [];
+
+    protected function schedule(Schedule $schedule)
+    {
+    }
+};
+
+exit($kernel->handle(new ArgvInput, new ConsoleOutput));
