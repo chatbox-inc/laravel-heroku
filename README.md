@@ -2,13 +2,21 @@
 
 [https://packagist.org/packages/chatbox-inc/heroku-php](https://packagist.org/packages/chatbox-inc/heroku-php)
 
-## Commands
+コマンド作成時には 単純にHeroku Command のエイリアスを作らないよう注意。
 
-heroku:procfile 
+Heroku Commands の利用については下記チートシートに追記していく。
 
-- Config Parser 
-- Error Handler
-- Setup Scripts
+http://qiita.com/mikakane/items/a8d275a397c6d626b54f
+
+## features
+
+### Code
+
+- Database/Redis Config Parser
+
+### Commands
+
+- Template generator
 
 ## Config Parser 
 

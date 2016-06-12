@@ -15,7 +15,8 @@ class AppJsonService
 
     public function load($path){
         if($this->checkFile($path)){
-
+            $content = file_get_contents($path);
+            return json_decode($content,true);
         }else{
             return null;
         }
