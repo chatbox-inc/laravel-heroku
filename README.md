@@ -8,37 +8,38 @@ Heroku Commands の利用については下記チートシートに追記して�
 
 http://qiita.com/mikakane/items/a8d275a397c6d626b54f
 
+## usage
+
+````
+if(class_exists(\Chatbox\Heroku\HerokuServiceProvider::class)){
+    $app->register(\Chatbox\Heroku\HerokuServiceProvider::class);
+}
+````
+
 ## features
 
-### Code
-
-- Database/Redis Config Parser
-
-### Commands
-
-- Template generator
+- Config Parser 
+- Template
+- Commands
 
 ## Config Parser 
 
-Heroku Addon の提供するConfig値をオブジェクトに変換して読み込めるようにする。
+Heroku Postgres and Heroku Redis Support.
 
-Runtime で分割するのは効率が悪いように思えるかも知れないが、
-AddonsのメンテでConfig値が勝手に書き換わるなどの運用も見られるため、
-Addons提供のConfig値は実装でバラさずに、そのまま参照して実行時にバラすのが無難。
+See Document to use it .
 
-````
-<?php 
-$db = new DatabaseConfig(env("DATABASE_URL"))
-$redis = new RedisConfig(env("REDIS_URL"))
-````
+## Template
 
-## Service Provider 
-
-Heroku で Laravelを動作させる際のService Provider
-
-ログの出力を標準出力に向けてくれる。 APP_LOGLEVEL のConfig値で調整可能(100-600)
+- Procfile
+- init script
+- app.json
 
 ## Commands
+
+- heroku:jdbcurl : jdbcurlの取得
+- heroku:open : heroku dashboard を開く
+
+
 
 ### heroku:init
 
