@@ -31,6 +31,12 @@ $kernel = new class($app) extends \Laravel\Lumen\Console\Kernel{
 
     protected $commands = [];
 
+    public function __construct(\Laravel\Lumen\Application $app)
+    {
+        $this->app = $app;
+    }
+
+
     protected function schedule(Schedule $schedule)
     {
     }

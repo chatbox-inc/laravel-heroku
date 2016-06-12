@@ -2,6 +2,10 @@
 
 [https://packagist.org/packages/chatbox-inc/heroku-php](https://packagist.org/packages/chatbox-inc/heroku-php)
 
+## Commands
+
+heroku:procfile 
+
 - Config Parser 
 - Error Handler
 - Setup Scripts

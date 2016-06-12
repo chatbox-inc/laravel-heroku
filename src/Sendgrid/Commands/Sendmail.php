@@ -1,5 +1,5 @@
 <?php
-namespace Chatbox\Heroku\Commands;
+namespace Chatbox\Heroku\Sendgrid\Commands;
 use Chatbox\Heroku\Addons\SendgridService;
 use Illuminate\Console\Command;
 use Psr\Log\LoggerInterface;
@@ -11,7 +11,9 @@ use Psr\Log\LoggerInterface;
  */
 class Sendmail extends Command
 {
-    protected $signature = "heroku:sendmail";
+    protected $signature = "sendgrid:sendmail";
+
+    protected $description = "send mail via sendgrid addons";
 
     public function handle(
         SendgridService $sendgrid,
