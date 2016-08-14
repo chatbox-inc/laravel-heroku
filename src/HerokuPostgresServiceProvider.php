@@ -20,17 +20,21 @@ class HerokuPostgresServiceProvider extends ServiceProvider
         {
             $databaseUrl = env(env("DB_DATABASE","DATABASE_URL"));
             $config = parse_url($databaseUrl);
-            app("config")->set("database.connections.herokupg",[
-                'driver' => 'herokupg',
-                'host'     => $config["host"],
-                'port'     => $config["port"],
-                'database' => substr($config["path"]??"forge",1),
-                'username' => $config["user"],
-                'password' => $config["pass"],
-                'charset'  => env('DB_CHARSET', 'utf8'),
-                'prefix'   => env('DB_PREFIX', ''),
-                'schema'   => env('DB_SCHEMA', 'public'),
-            ]);
+            if($databaseUrl){
+                app("config")->set("database.connections.herokupg",[
+                    'driver' => 'herokupg',
+                    'host'     => $config["host"],
+                    'port'     => $config["port"],
+                    'database' => substr($config["path"]??"forge",1),
+                    'username' => $config["user"],
+                    'password' => $config["pass"],
+                    'charset'  => env('DB_CHARSET', 'utf8'),
+                    'prefix'   => env('DB_PREFIX', ''),
+                    'schema'   => env('DB_SCHEMA', 'public'),
+                ]);
+            }else{
+                throw new \Exception("invalid databaseurl : $databaseUrl");
+            }
             return $dbObj;
         });
 
