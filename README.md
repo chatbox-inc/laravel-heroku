@@ -1,20 +1,21 @@
-# Heorku 
+# Heorku PHP Utility 
 
 [https://packagist.org/packages/chatbox-inc/heroku-php](https://packagist.org/packages/chatbox-inc/heroku-php)
 
-コマンド作成時には 単純にHeroku Command のエイリアスを作らないよう注意。
+Heroku コマンドに対する機能追加などはHeroku Plugin で行う。
 
-Heroku Commands の利用については下記チートシートに追記していく。
+Heroku コマンドのチートシートは下記参照
 
 http://qiita.com/mikakane/items/a8d275a397c6d626b54f
 
-## usage
+## 機能
 
-````
-if(class_exists(\Chatbox\Heroku\HerokuServiceProvider::class)){
-    $app->register(\Chatbox\Heroku\HerokuServiceProvider::class);
-}
-````
+- HerokuPostgresServiceProvider
+- HerokuRedisServiceProvider
+- HerokuLoggerServiceProvider
+
+## Commands
+>>>>>>> Stashed changes
 
 ## features
 

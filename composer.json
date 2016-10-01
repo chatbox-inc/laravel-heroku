@@ -12,10 +12,5 @@
         "psr-4":{
             "Chatbox\\Heroku\\":["./src"]
         }
-    },
-    "bin":["./bin/phpheroku"],
-    "require": {},
-    "require-dev": {
-        "laravel/lumen": "^5.2"
     }
 }
