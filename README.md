@@ -1,4 +1,4 @@
-# Heorku PHP Utility 
+# Heroku PHP Utility 
 
 [https://packagist.org/packages/chatbox-inc/heroku-php](https://packagist.org/packages/chatbox-inc/heroku-php)
 
@@ -13,3 +13,14 @@ http://qiita.com/mikakane/items/a8d275a397c6d626b54f
 - HerokuPostgresServiceProvider
 - HerokuRedisServiceProvider
 - HerokuLoggerServiceProvider
+
+## Usage
+
+### HerokuPostgresServiceProvider
+
+サービス・プロバイダを登録し、`.env`に以下を設定
+
+````
+DB_CONNECTION=herokupg
+DATABASE_URL=postgres://xxxxxxxxxxxxxxxxxxxxxxxxx
+````
