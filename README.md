@@ -16,9 +16,33 @@ http://qiita.com/mikakane/items/a8d275a397c6d626b54f
 
 ## Usage
 
+導入
+
+````
+$ composer require chatbox-inc/heroku-php
+````
+
 ### HerokuPostgresServiceProvider
 
-サービス・プロバイダを登録し、`.env`に以下を設定
+HerokuPostgresServiceProvider をサービスプロバイダとして公開
+
+Laravel 
+
+````
+// at config/app.php
+
+"providers" => [
+    HerokuPostgresServiceProvider::class,
+]
+````
+
+Lumen 
+
+````
+$app->register(HerokuPostgresServiceProvider::class)
+````
+
+`.env`に以下を設定
 
 ````
 DB_CONNECTION=herokupg
