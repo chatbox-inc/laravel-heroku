@@ -32,8 +32,6 @@ class HerokuPostgresServiceProvider extends ServiceProvider
                     'prefix'   => env('DB_PREFIX', ''),
                     'schema'   => env('DB_SCHEMA', 'public'),
                 ]);
-            }else{
-                throw new \Exception("invalid databaseurl : $databaseUrl");
             }
             return $dbObj;
         });
