@@ -22,11 +22,11 @@ class HerokuRedisServiceProvider extends ServiceProvider
             $config = parse_url($databaseUrl);
             app("config")->set("database.connections.herokupg",[
                 'driver' => 'herokupg',
-                'host'     => $config["host"],
-                'port'     => $config["port"],
+                'host'     => $config["host"]??null,
+                'port'     => $config["port"]??null,
                 'database' => substr($config["path"]??"forge",1),
-                'username' => $config["user"],
-                'password' => $config["pass"],
+                'username' => $config["user"]??null,
+                'password' => $config["pass"]??null,
                 'charset'  => env('DB_CHARSET', 'utf8'),
                 'prefix'   => env('DB_PREFIX', ''),
                 'schema'   => env('DB_SCHEMA', 'public'),
