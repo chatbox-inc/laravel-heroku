@@ -1,6 +1,6 @@
 # Heroku PHP Utility 
 
-[![Latest Stable Version](https://poser.pugx.org/laravel-heroku/version)](https://packagist.org/packages/chatbox-inc/laravel-heroku)
+[![Latest Stable Version](https://poser.pugx.org/chatbox-inc/laravel-heroku/version)](https://packagist.org/packages/chatbox-inc/laravel-heroku)
 
 
 Heroku でPHPアプリケーションを利用する際のユーティリティなど
