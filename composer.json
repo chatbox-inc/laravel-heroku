@@ -1,13 +1,15 @@
 {
-    "name": "chatbox-inc/heroku-php",
+    "name": "chatbox-inc/laravel-heroku",
     "license": "MIT",
-
     "authors": [
         {
             "name": "mikakane",
             "email": "mikakane2@gmail.com"
         }
     ],
+    "require":{
+        "php": "7.*"
+    },
     "autoload":{
         "psr-4":{
             "Chatbox\\Heroku\\":["./src"]

@@ -2,18 +2,20 @@
 
 Heroku でPHPアプリケーションを利用する際のユーティリティなど
 
+基本的に保守する予定は無いです。
+
 ## 機能
 
-- HerokuPostgresServiceProvider
-- HerokuRedisServiceProvider
-- HerokuLoggerServiceProvider
+- HerokuPostgresServiceProvider : Heroku Postgres への接続を提供
+- HerokuRedisServiceProvider : Heroku Redis への接続を提供
+- HerokuLoggerServiceProvider : Heroku Log へのログ出力をサポート
 
 ## Usage
 
 導入
 
 ````
-$ composer require chatbox-inc/heroku-php
+$ composer require chatbox-inc/laravel-heroku
 ````
 
 ### HerokuPostgresServiceProvider / HerokuRedisServiceProvider
@@ -48,12 +50,3 @@ Redis を利用する際も同様に
 ### HerokuLoggerServiceProvider
 
 ログ出力を標準出力に切り替えてくれる。
-
-Papertrail などと併用して快適ログ生活。
-
-## 備考　
-
-Heroku Command に対する機能追加などは,Heroku Plugin で行っていく
-Heroku Command のチートシートは 下記を参照
-
-http://qiita.com/mikakane/items/a8d275a397c6d626b54f

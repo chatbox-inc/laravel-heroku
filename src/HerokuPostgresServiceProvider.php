@@ -22,7 +22,7 @@ class HerokuPostgresServiceProvider extends ServiceProvider
             $config = parse_url($databaseUrl);
             if($databaseUrl){
                 app("config")->set("database.connections.herokupg",[
-                    'driver' => 'herokupg',
+                    'driver' => 'pgsql',
                     'host'     => $config["host"]??null,
                     'port'     => $config["port"]??null,
                     'database' => substr($config["path"]??"forge",1),
@@ -34,15 +34,6 @@ class HerokuPostgresServiceProvider extends ServiceProvider
                 ]);
             }
             return $dbObj;
-        });
-
-        $this->app->bind("db.connector.herokupg",function(){
-            return new PostgresConnector;
-        });
-
-        $this->app->bind("db.connection.herokupg",function($app,$configData){
-            list($connection, $database, $prefix, $config) = $configData;
-            return new PostgresConnection($connection, $database, $prefix, $config);
         });
     }
 }
