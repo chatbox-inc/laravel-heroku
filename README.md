@@ -1,27 +1,25 @@
-# Heroku PHP Utility 
+# Laravel on Heroku 
 
 [![Latest Stable Version](https://poser.pugx.org/chatbox-inc/laravel-heroku/version)](https://packagist.org/packages/chatbox-inc/laravel-heroku)
 
+These are ServiceProviders that helps you use Laravel on Heroku. 
 
-Heroku でPHPアプリケーションを利用する際のユーティリティなど
+## functions 
 
-基本的に保守する予定は無いです。
+These provider wont be auto-discovered.
 
-## 機能
+You should add setting to `config/app.php`.
 
-- HerokuPostgresServiceProvider : Heroku Postgres への接続を提供
-- HerokuRedisServiceProvider : Heroku Redis への接続を提供
-- HerokuLoggerServiceProvider : Heroku Log へのログ出力をサポート
+- HerokuPostgresServiceProvider : Support to connect Heroku Postgres 
+- HerokuRedisServiceProvider : Support to connect Heroku Redis 
 
 ## Usage
-
-導入
 
 ````
 $ composer require chatbox-inc/laravel-heroku
 ````
 
-### HerokuPostgresServiceProvider / HerokuRedisServiceProvider
+### Heroku Postgres / Heroku Redis
 
 HerokuPostgresServiceProvider をサービスプロバイダとして公開
 
@@ -35,21 +33,23 @@ For Laravel
 ]
 ````
 
-For Lumen 
+After that, You can use `herokupg` keyword as `DB_CONNECTION` value.
 
-````
-$app->register(HerokuPostgresServiceProvider::class)
-````
-
-`.env`に以下を設定
+DATABASE_URL will auto parsed on connecting DB.
 
 ````
 DB_CONNECTION=herokupg
 DATABASE_URL=postgres://xxxxxxxxxxxxxxxxxxxxxxxxx
 ````
 
-Redis を利用する際も同様に
+## Heroku Redis 
 
-### HerokuLoggerServiceProvider
+`HerokuRedisServiceProvider` will auto setup your redis connection.
 
-ログ出力を標準出力に切り替えてくれる。
+`REDIS_URL` will automatically parsed to connect Redis.
+
+## Procfile 
+
+```
+cp vendor/chatbox-inc/laravel-heroku/Procfile Procfile
+```
