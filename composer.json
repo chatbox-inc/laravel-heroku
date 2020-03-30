@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Chatbox\\Heroku\\HerokuPostgresServiceProvider",
+                "Chatbox\\Heroku\\HerokuPostgresServiceProvider"
             ]
         }   
     }
